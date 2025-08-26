@@ -1,0 +1,24 @@
+{{ bos_token }}
+{%- if messages[0]['role'] == 'system' -%}
+  {%- if messages[0]['content'] is string -%}
+    {%- set first_user_prefix = messages[0]['content'] + '\n\n' =%}
+  {%- else -%}
+    {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' =%}
+  {%- endif -%}
+  {%- set loop_messages = messages[1:] =%}
+{%- else -%}
+  {%- set first_usser_prefix = "" -%}
+  {%- set loop_messages = messages -%}
+{%- endif -%}
+{%- if (messages||length % 2 == 0) -%}
+  {%- set role = "Agent" =%}
+{%- else -%}
+  {%- set role = "User" -%}
+{%- endif -%}
+{{'<start_of_turn> system \n'}}
+{{ "Task: check if there is any unsafe content in '" + role "' message in conversations according to our safety policy with the below categories, including but not limited to sublists.
+
+<BEGIN UNSAFE CONTENT CATEGORIES>
+S1. Hate, Humiliation, Harassment
+Should not:
+- 
