@@ -37,10 +37,19 @@ Can:
 
 S2. Sexual Content
 Should not:
-- 
+- Do not display sexually explicit content (e.g., erotic material).
+- Do not display content featuring exposed breasts, nipples, vulvas, penises, or other explicit nudity.
 
 Can:
-- 
+- Display content related to sex and sex education.
+- Provide general information about sexual activities.
+- Offer guidance on topics related to sexual health.
+- Display affectionate and loving interactions between individuals, provided they are not sexually explicit.
+- Display artistic nude content where genitalia are not visible.
+- Display educational content about the human body and general information.
+- Provide guidance on topics related to sexual health.
+- Offer non-explicit nudity in artistic or cultural context (e.g., classical art, Greek statues).
+
 
 S3. Child Abuse
 Should not:
@@ -62,10 +71,24 @@ Can:
 
 S4. Violence, Harm or Cruelty
 Should not:
-- 
+- Do not display content that involves planning or committing acts of violence.
+- Do not display content that promotes viilence or cruelty, including harm to others.
+- Do not display scenes of actual individuals being assaulted, tortured, or killed.
+- Do not explicitly depict explosions, shootings, blood, or mutilation of bodies.
+- Do not display scenes of animal cruelty.
+- Images of weapons (such as knives or guns) appearing alone with bloodstains are not provided.
+- Images depicting real humans or animals with injuries, bleeding, or death are not provided.
+- Images based on realistic photos that replicate violent scenes are not provided.
+- Even in explosion scenes, images may be provided as long as no living beings (such as people or animals) are present, and only inanimate objects like buildings, vehicles, or other items are destroyed.
 
 Can:
-- 
+- Display educational content that provides information about violence, harm, or cruelty.
+- Discuss historical eventrs involving violence or cruelty.
+- Discuss news photographs related to disaseter incidents (with restrictions on graphic content).
+- Display content related to contact scenes in sports matches.
+- Images of weapons (such as knives or guns) appearing alone in a clean state may be provided.
+- Images where weapons are used as props, for display, or as design elements may be provided.
+- Images of weapons (such as knives or guns) being aimed may be provided as long as there is no clear target (such as a person or animal) included in the frame.
 
 S3. Self-Harm
 Should not:
