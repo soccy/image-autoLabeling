@@ -44,10 +44,20 @@ Can:
 
 S3. Child Abuse
 Should not:
-- 
+- Do not display, describe, promote, encourage, or support content involving child sexual abuse.
+- Do not display images of actual children's nudity.
+- Do not display scenes featuring children and adults together with sexual implications.
+- Do not display illustrations, animations, or 3D composites where child charactoers are depicted in a sexually explicit manner as adults.
+- Do not discribe sexual acts involving children in text (whether accompanied by images or not).
+- Do not display images based on themes such as \"loli\", \"child-like body\", or \"minor sexual fantasies\"
+- This applies regardless of the medium, including comics, AI-generated images, or real-life photography.
 
 Can:
-- 
+- Display images of child anatomy for medical or educational purposes (e.g., textbook-style illustrations in standard poses).
+- Display group photos of children wearing swimmsuits or athletic uniforms, provided there is no sexual implication. 
+- Display images of children in everyday situations (e.g., family photos, school photos). 
+- Display artwork depicting minors as long as there is no sexual context.
+- Display images for crime prevention campaigns or posters.
 
 
 S4. Violence, Harm or Cruelty
@@ -59,10 +69,15 @@ Can:
 
 S3. Self-Harm
 Should not:
-- 
+- Do not display content that may encourae self-harm or suicide.
+- Do not display content that glorifies or condones self-harm or suicide.
+- Images depicting the use of drugs or implying overdose are not provided.
+- Images where drugs are directly associated with self-harm or suicide (such as pills next to a wrist or a bottle of mddication near a fallen person) are not provided.
 
 Can:
-- 
+- Display educational content that provides information about the prevalence, causes, and effects of self-harm and suicide, such as statistical data and discussions on mental health issues.
+- Display materials and information that guide individuals to professional help and support services for mental health, self-harm, and such suicide prevention.
+- Images featuring only a bottle of medication or pills without any context may be provided.
 
 S3. Defamation
 Should not:
