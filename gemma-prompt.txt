@@ -1,22 +1,22 @@
 {{ bos_token }}
 {%- if messages[0]['role'] == 'system' -%}
   {%- if messages[0]['content'] is string -%}
-    {%- set first_user_prefix = messages[0]['content'] + '\n\n' =%}
+    {%- set first_user_prefix = messages[0]['content'] + '\n\n' -%}
   {%- else -%}
-    {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' =%}
+    {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' -%}
   {%- endif -%}
-  {%- set loop_messages = messages[1:] =%}
+  {%- set loop_messages = messages[1:] -%}
 {%- else -%}
-  {%- set first_usser_prefix = "" -%}
+  {%- set first_user_prefix = "" -%}
   {%- set loop_messages = messages -%}
 {%- endif -%}
-{%- if (messages||length % 2 == 0) -%}
-  {%- set role = "Agent" =%}
+{%- if (messages|length % 2 == 0) -%}
+  {%- set role = "Agent" -%}
 {%- else -%}
   {%- set role = "User" -%}
 {%- endif -%}
 {{'<start_of_turn> system \n'}}
-{{ "Task: check if there is any unsafe content in '" + role "' message in conversations according to our safety policy with the below categories, including but not limited to sublists.
+{{ "Task: check if there is any unsafe content in '" + role + "' message in conversations according to our safety policy with the below categories, including but not limited to sublists.
 
 <BEGIN UNSAFE CONTENT CATEGORIES>
 S1. Hate, Humiliation, Harassment
@@ -90,7 +90,7 @@ Can:
 - Images where weapons are used as props, for display, or as design elements may be provided.
 - Images of weapons (such as knives or guns) being aimed may be provided as long as there is no clear target (such as a person or animal) included in the frame.
 
-S3. Self-Harm
+S5. Self-Harm
 Should not:
 - Do not display content that may encourae self-harm or suicide.
 - Do not display content that glorifies or condones self-harm or suicide.
@@ -102,7 +102,7 @@ Can:
 - Display materials and information that guide individuals to professional help and support services for mental health, self-harm, and such suicide prevention.
 - Images featuring only a bottle of medication or pills without any context may be provided.
 
-S3. Defamation
+S6. Defamation
 Should not:
 - Do not display images that distort or deform faces or bodies for comedic purposes (including deepfake composites and satirical illustrations). 
 - Do not display manipulated fake images of real public figures, such as celebrities, politicians, or influencers, altering their statements or actions.
@@ -118,7 +118,7 @@ Can:
 <END UNSAFE CONTENT CATEGORIES>
 
 <BEGIN CONVERSATION>"}}
-{{"Provide your safety assessment for '" + role _ "' in the below conversation:
+{{"Provide your safety assessment for '" + role + "' in the below conversation:
 - First line must read 'safe' or 'unsafe'.
 - Second line must include a related categorie."}}
 {{ '<end_of_turn>\n' }}
@@ -133,7 +133,7 @@ Can:
   {%- endif -%}
   {{ '<start_of_turn>' + role + '\n' + (first_user_prefix if loop.first else "") }}
   {%- if message['content'] is string -%}
-    {{message['content'] | treim}}
+    {{message['content'] | trim}}
   {%- elif message['content'] is iterable -%}
     {%- for item in message['content'] -%}
       {%- if item['type'] == 'image' -%}
@@ -150,4 +150,3 @@ Can:
 {%- if add_generation_prompt -%}
   {{'<start_of_turn>model\n'}}
 {%- endif -%}
-  
