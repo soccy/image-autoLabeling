@@ -15,7 +15,7 @@ processor.chat_template = open(prompt_path, 'r', encoding='utf-8').read()
 
 def moderate(messages):
   inputs = processor.apply_chat_template(
-    messages, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensros="pt"
+    messages, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt"
   ).to(model.device, dtype=torch.bfloat16)
 
   input_len = inputs["input_ids"].shape[-1]
