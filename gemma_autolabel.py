@@ -7,13 +7,15 @@ import torch
 model_path = '/group-volume/Sentinel/LLMs/HH/google/gemma-3-12b-it'
 prompt_path = './gemma-prompt.txt'
 
-model = Gemma3ForconditionalGeneration.from_pretrained(
+model = Gemma3ForConditionalGeneration.from_pretrained(
   model_path, local_files_only=True, device_map='auto').eval()
+
+processor = AutoProcessor.from_pretrained(model_path, local_files_only=True)
 processor.chat_template = open(prompt_path, 'r', encoding='utf-8').read()
 
 def moderate(messages):
   inputs = processor.apply_chat_template(
-    messages, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensros='pt"
+    messages, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensros="pt"
   ).to(model.device, dtype=torch.bfloat16)
 
   input_len = inputs["input_ids"].shape[-1]
@@ -29,17 +31,17 @@ train = pd.read_json('sentinel_i_v0.1.0_trainval.jsonl', lines=True)
 train['autolabel_gemma_result'] = ''
 
 for i in range(len(train)):
-  image =image.open(f"/group-volume/Sentinel-I/dataset/train_dataset/{train.iloc[i]['image_path']}")
+  image =Image.open(f"/group-volume/Sentinel-I/dataset/train_dataset/{train.iloc[i]['image_path']}")
   messages = [
     {
       "role": "system",
       "content": [{"type": "text", "text": "You are a helpful assistant."}]
     },
     {
-      "role": "user"
+      "role": "user",
       "content": [
         {"type": "image", "image": image},
-        {"type": "textg", "text": "."}
+        {"type": "text", "text": "."}
       ]
     }
   ]
